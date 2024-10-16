@@ -1,0 +1,40 @@
+{
+	"name": "vite-plugin-hono-file-route-generator",
+	"version": "0.0.0",
+	"description": "A vite plugin that scans a folder, grabs all default exports, and generates a js/ts file that exports an array for mounting.",
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.cts",
+	"exports": {
+		"require": {
+			"types": "./dist/index.d.cts",
+			"default": "./dist/index.cjs"
+		},
+		"import": {
+			"types": "./dist/index.d.mts",
+			"default": "./dist/index.mjs"
+		}
+	},
+	"private": false,
+	"scripts": {
+		"dev": "pkgroll --watch",
+		"build": "pkgroll"
+	},
+	"keywords": [
+		"hono",
+		"file",
+		"router",
+		"vite",
+		"plugin"
+	],
+	"author": "thisjt",
+	"license": "MIT",
+	"type": "module",
+	"devDependencies": {
+		"@eslint/js": "^9.12.0",
+		"@types/eslint__js": "^8.42.3",
+		"eslint": "^9.12.0",
+		"typescript": "^5.6.3",
+		"typescript-eslint": "^8.9.0"
+	}
+}
