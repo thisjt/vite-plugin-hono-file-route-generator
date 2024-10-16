@@ -1,8 +1,15 @@
 import eslint from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import prettier from 'eslint-config-prettier';
+import globals from 'globals';
 
 export default tseslint.config(eslint.configs.recommended, prettier, ...tseslint.configs.recommended, {
+	languageOptions: {
+		globals: {
+			...globals.browser,
+			...globals.node,
+		},
+	},
 	rules: {
 		'no-undef': ['error', { typeof: true }],
 		eqeqeq: 'error',
@@ -31,7 +38,6 @@ export default tseslint.config(eslint.configs.recommended, prettier, ...tseslint
 				skipBlankLines: true,
 			},
 		],
-		quotes: ['error', 'single'],
 		semi: ['error', 'always'],
 		'comma-spacing': [
 			'error',
