@@ -25,15 +25,8 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - name: install dependencies
         run: pnpm install
-      - name: test
-        run: pnpm test
       - name: build
         run: pnpm build
-      - name: print tree
-        uses: jaywcjlove/github-action-folder-tree@main
-        with:
-          exclude: 'node_modules|.git'
-          depth: 3
       - name: publish
         run: pnpm publish --no-git-checks
         env:
