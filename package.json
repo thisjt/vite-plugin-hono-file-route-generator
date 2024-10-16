@@ -1,6 +1,6 @@
 {
 	"name": "vite-plugin-hono-file-route-generator",
-	"version": "0.0.0",
+	"version": "0.0.1",
 	"description": "A vite plugin that scans a folder, grabs all default exports, and generates a js/ts file that exports an array for mounting.",
 	"main": "./dist/index.cjs",
 	"module": "./dist/index.mjs",
