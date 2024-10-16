@@ -1,0 +1,7 @@
+eslint.config.js
+node_modules/
+.github/
+src/
+coverage/
+prettier.config.js
+tsconfig.json
