@@ -104,6 +104,11 @@ export default function honoFileRouteGenerator(options: Options) {
 				const importsListFormatted = listOfImports.map((importation, i) => `import route${i + 1} from ${quotes || "'"}${importation}${quotes || "'"};`);
 				importsListFormatted.push('');
 				importsListFormatted.push(`export default [${listOfImports.map((i, j) => `route${j + 1}`).join(', ')}];`);
+
+				if (destination.split('.').pop() === 'ts') {
+					importsListFormatted.push(`export type Routes = ${listOfImports.map((i, j) => `typeof route${j + 1}`).join(' & ')};`);
+				}
+
 				importsListFormatted.push('');
 
 				const generatedJsTsFile = importsListFormatted.join('\n');
